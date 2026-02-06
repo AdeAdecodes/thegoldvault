@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gold Vault - Transform Your Gold Into Growth Capital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #F4E4C1;
+            --gold-dark: #B8941E;
+            --cream: #FAF7F0;
+            --charcoal: #1A1A1A;
+            --warm-gray: #8B8680;
+            --deep-brown: #2C2520;
+            --ivory: #FFFEF9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .bodoni {
+            font-family: 'Bodoni Moda', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 240, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gold-primary);
+            animation: navSlideDown 0.8s ease-out;
+        }
+
+        @keyframes navSlideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold-dark);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--ivory);
+            padding: 0.75rem 1.75rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, var(--gold-light) 100%);
+            opacity: 0.3;
+            z-index: 0;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+        }
+
+        .hero .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--ivory);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            border: 1px solid var(--gold-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-badge::before {
+            content: '✦';
+            color: var(--gold-primary);
+            font-size: 1rem;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero h1 {
+            color: var(--charcoal);
+        }
+
+        .gold-text {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--warm-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.25rem;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .primary-button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--ivory);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: var(--charcoal);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--charcoal);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background: var(--charcoal);
+            color: var(--ivory);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(139, 134, 128, 0.2);
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            font-weight: 300;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeIn 1.2s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-card {
+            background: var(--ivory);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gold-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-dark), var(--gold-primary));
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .card-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .card-info p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            margin: 0;
+        }
+
+        .gold-value {
+            background: linear-gradient(135deg, var(--gold-light), transparent);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+        }
+
+        .gold-value label {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            display: block;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gold-value .amount {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+        }
+
+        .progress-bar {
+            background: rgba(212, 175, 55, 0.1);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-dark));
+            width: 70%;
+            border-radius: 10px;
+            animation: progressGrow 2s ease-out 1.5s both;
+        }
+
+        @keyframes progressGrow {
+            from { width: 0; }
+            to { width: 70%; }
+        }
+
+        .progress-label {
+            font-size: 0.8rem;
+            color: var(--warm-gray);
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--ivory);
+            color: var(--gold-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid var(--gold-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--warm-gray);
+            line-height: 1.8;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--deep-brown);
+            color: var(--cream);
+        }
+
+        .problem-section h2,
+        .problem-section .gold-text {
+            color: var(--cream);
+        }
+
+        .problem-section p {
+            color: rgba(250, 247, 240, 0.8);
+        }
+
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: rgba(250, 247, 240, 0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .problem-card:hover {
+            background: rgba(250, 247, 240, 0.08);
+            border-color: var(--gold-primary);
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        .problem-card p {
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-card {
+            position: relative;
+            padding: 2rem;
+            background: var(--ivory);
+            border-radius: 20px;
+            border: 1px solid var(--gold-light);
+            transition: all 0.4s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .process-number {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .process-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .process-card p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--ivory);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 2px solid var(--gold-light);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-dark));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-primary);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .product-card > p {
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--gold-light);
+            color: var(--gold-dark);
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: linear-gradient(135deg, var(--ivory) 0%, var(--gold-light) 100%);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .trust-features {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .trust-item {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .trust-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--ivory);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            border: 1px solid var(--gold-primary);
+        }
+
+        .trust-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .trust-item p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+
+        .trust-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .trust-stat {
+            background: var(--ivory);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--gold-primary);
+            text-align: center;
+        }
+
+        .trust-stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .trust-stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-stat-label {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--charcoal);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--cream);
+        }
+
+        .cta-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cta-input {
+            flex: 1;
+            padding: 1.25rem 1.75rem;
+            border: 2px solid rgba(250, 247, 240, 0.2);
+            border-radius: 50px;
+            background: rgba(250, 247, 240, 0.05);
+            color: var(--cream);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-input::placeholder {
+            color: rgba(250, 247, 240, 0.5);
+        }
+
+        .cta-input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            background: rgba(250, 247, 240, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-brown);
+            color: var(--cream);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--cream);
+        }
+
+        .footer-brand p {
+            color: rgba(250, 247, 240, 0.7);
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(250, 247, 240, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250, 247, 240, 0.1);
+            text-align: center;
+            color: rgba(250, 247, 240, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.75rem; }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid,
+            .problem-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+
+            nav ul {
+                display: none;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal {
+            background: var(--cream);
+            border-radius: 24px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid var(--gold-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-header h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--warm-gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--charcoal);
+        }
+
+        .modal-content {
+            padding: 2rem;
+        }
+
+        .modal-step {
+            display: none;
+        }
+
+        .modal-step.active {
+            display: block;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .appointment-message {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .appointment-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .appointment-message h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .appointment-message p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            letter-spacing: 0.3px;
+        }
+
+        .form-input {
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--gold-light);
+            border-radius: 12px;
+            background: var(--ivory);
+            color: var(--charcoal);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--warm-gray);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-message h4 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .success-message p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo serif">
+                <div class="logo-icon">◆</div>
+                The Gold Vault
+            </a>
+            <ul>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><button class="cta-button" onclick="openBookingModal()">Book Appointment</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Coming Soon to Nigeria</div>
+                <h1 class="serif">
+                    Turn Your Gold Into<br>
+                    <span class="gold-text">Growth Capital</span>
+                </h1>
+                <p>The Gold Vault transforms your physical gold jewelry and bullion into instant digital liquidity. Access low-risk credit or sell on a trusted marketplace — all without losing ownership of your precious assets.</p>
+                
+                <div class="hero-buttons">
+                    <button class="primary-button" onclick="openBookingModal()">
+                        Book Appointment
+                        <span>→</span>
+                    </button>
+                    <button class="secondary-button">Learn More</button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value serif">₦1.5T+</div>
+                        <div class="stat-label">Household Gold Value</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value serif">60M+</div>
+                        <div class="stat-label">Women with Gold Assets</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value serif">70%</div>
+                        <div class="stat-label">Loan-to-Value Ratio</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-header">
+                        <div class="avatar">◆</div>
+                        <div class="card-info">
+                            <h3 class="serif">Your Gold Portfolio</h3>
+                            <p>Securely vaulted & verified</p>
+                        </div>
+                    </div>
+                    <div class="gold-value">
+                        <label>Total Gold Value</label>
+                        <div class="amount serif">₦2,450,000</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-label">70% available for credit (₦1,715,000)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-section scroll-fade">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">The Challenge</div>
+                <h2 class="serif">
+                    Nigeria Has Wealth —<br>
+                    <span class="gold-text">It's Just Invisible</span>
+                </h2>
+                <p>Trillions of naira in privately held gold sit idle while women entrepreneurs face the widest credit gap in the financial system.</p>
+            </div>
+
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="problem-icon">◆</div>
+                    <h3 class="serif">Idle Wealth</h3>
+                    <p>Trillions of naira in gold jewelry and bullion sit unused in households across Nigeria.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">👥</div>
+                    <h3 class="serif">Credit Gap</h3>
+                    <p>Women hold a disproportionate share of gold assets yet face the widest access to credit.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🏛</div>
+                    <h3 class="serif">System Failure</h3>
+                    <p>Banks lack trusted mechanisms to accept household gold as collateral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="scroll-fade">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Simple Process</div>
+                <h2 class="serif">
+                    How The Gold Vault <span class="gold-text">Works</span>
+                </h2>
+                <p>Transform your physical gold into digital liquidity in four simple steps.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number serif">01</div>
+                    <h3 class="serif">Deposit & Verify</h3>
+                    <p>Bring your gold to our secure vaults for professional verification and insurance.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number serif">02</div>
+                    <h3 class="serif">Digital Ledger</h3>
+                    <p>Your gold is logged into our real-time Gold Ledger with weight, purity, and value.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number serif">03</div>
+                    <h3 class="serif">Access Liquidity</h3>
+                    <p>Choose between instant credit or listing on our marketplace for sale.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number serif">04</div>
+                    <h3 class="serif">Daily Repricing</h3>
+                    <p>Credit limits automatically adjust with global gold spot prices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="scroll-fade">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Product Stack</div>
+                <h2 class="serif">
+                    Three Products.<br>
+                    <span class="gold-text">One Ledger.</span>
+                </h2>
+                <p>A complete financial ecosystem designed around your gold assets.</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">💳</div>
+                    <h3 class="serif">Gold-Backed Credit</h3>
+                    <p>Access overdraft and working capital facilities with your gold as collateral. 70% loan-to-value ratio with daily repricing.</p>
+                    <ul class="feature-list">
+                        <li>70% LTV ratio</li>
+                        <li>Daily repricing</li>
+                        <li>Conservative risk profile</li>
+                        <li>Instant disbursement</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">◆</div>
+                    <h3 class="serif">Digital Gold Wardrobe</h3>
+                    <p>Your personal vault with professional imagery, specifications, and real-time valuation of all your gold assets.</p>
+                    <ul class="feature-list">
+                        <li>Professional imaging</li>
+                        <li>Weight & purity tracking</li>
+                        <li>Real-time valuation</li>
+                        <li>Full audit trail</li>
+                    </ul>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">📈</div>
+                    <h3 class="serif">Gold Marketplace</h3>
+                    <p>The first regulated gold marketplace in Nigeria. Only verified, vaulted assets can trade with instant Naira settlement.</p>
+                    <ul class="feature-list">
+                        <li>Verified gold only</li>
+                        <li>Instant Naira settlement</li>
+                        <li>Price discovery</li>
+                        <li>Network effects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety" class="trust-section scroll-fade">
+        <div class="container">
+            <div class="trust-grid">
+                <div>
+                    <div class="section-badge">Built for Trust</div>
+                    <h2 class="serif">
+                        Designed for<br>
+                        <span class="gold-text">Regulators First</span>
+                    </h2>
+                    <p style="margin-bottom: 3rem;">The Gold Vault is built with prudential safety at its core. Every aspect of our platform is designed to meet and exceed regulatory standards.</p>
+                    
+                    <div class="trust-features">
+                        <div class="trust-item">
+                            <div class="trust-icon">🛡</div>
+                            <div>
+                                <h4 class="serif">Over-Collateralized Lending</h4>
+                                <p>Conservative 70% LTV with automatic margin buffers.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">🔒</div>
+                            <div>
+                                <h4 class="serif">Independent Custody & Insurance</h4>
+                                <p>Your gold is stored in secure vaults with full insurance coverage.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">🏛</div>
+                            <div>
+                                <h4 class="serif">Regulatory Compliance</h4>
+                                <p>Full CBN alignment with transparent reporting and audit trails.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-visual">
+                    <div class="trust-stat">
+                        <div class="trust-stat-icon">⭐</div>
+                        <div class="trust-stat-value serif">100%</div>
+                        <div class="trust-stat-label">Insured Assets</div>
+                    </div>
+                    <div class="trust-stat">
+                        <div class="trust-stat-icon">🛡</div>
+                        <div class="trust-stat-value serif">CBN</div>
+                        <div class="trust-stat-label">Aligned</div>
+                    </div>
+                    <div class="trust-stat">
+                        <div class="trust-stat-icon">🔒</div>
+                        <div class="trust-stat-value serif">70%</div>
+                        <div class="trust-stat-label">Max LTV</div>
+                    </div>
+                    <div class="trust-stat">
+                        <div class="trust-stat-icon">📈</div>
+                        <div class="trust-stat-value serif">Daily</div>
+                        <div class="trust-stat-label">Repricing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section scroll-fade">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="serif">
+                    Book Your <span class="gold-text">Appointment</span>
+                </h2>
+                <p>Schedule a consultation to transform your gold into growth capital. Our experts are ready to help.</p>
+            </div>
+
+            <button class="primary-button" onclick="openBookingModal()" style="margin: 0 auto; display: flex;">
+                Check Availability
+                <span>→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="serif">Book Appointment</h3>
+                <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <!-- Step 1: No Appointments Available -->
+                <div class="modal-step active" id="step1">
+                    <div class="appointment-message">
+                        <div class="appointment-icon">📅</div>
+                        <h4 class="serif">No Appointments Available</h4>
+                        <p>We're currently at full capacity. Join our waitlist to be notified when new appointment slots become available.</p>
+                        <button class="primary-button" onclick="showWaitlistForm()" style="margin: 0 auto; display: flex;">
+                            Join Waitlist
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Waitlist Form -->
+                <div class="modal-step" id="step2">
+                    <form class="waitlist-form" onsubmit="submitWaitlist(event)">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+234 XXX XXX XXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="goldValue">Estimated Gold Value (Optional)</label>
+                            <input type="text" id="goldValue" class="form-input" placeholder="₦ 0.00">
+                        </div>
+                        <button type="submit" class="primary-button" style="width: 100%; margin-top: 1rem;">
+                            Join Waitlist
+                            <span>→</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 3: Success Message -->
+                <div class="modal-step" id="step3">
+                    <div class="success-message">
+                        <div class="success-icon">✓</div>
+                        <h4 class="serif">You're on the Waitlist!</h4>
+                        <p>Thank you for your interest in The Gold Vault. We'll notify you via email and SMS as soon as appointment slots become available.</p>
+                        <button class="secondary-button" onclick="closeBookingModal()" style="margin: 2rem auto 0; display: flex;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3 class="serif">The Gold Vault</h3>
+                <p>Transforming Nigeria's invisible wealth into accessible capital for entrepreneurs and businesses.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul class="footer-links">
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#safety">Safety</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Regulatory</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 The Gold Vault. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Modal functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reset to first step
+            showStep(1);
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Reset form
+            document.querySelector('.waitlist-form').reset();
+        }
+
+        function showStep(stepNumber) {
+            document.querySelectorAll('.modal-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.getElementById('step' + stepNumber).classList.add('active');
+        }
+
+        function showWaitlistForm() {
+            showStep(2);
+        }
+
+        function submitWaitlist(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                goldValue: document.getElementById('goldValue').value
+            };
+
+            // Here you would typically send the data to your backend
+            console.log('Waitlist submission:', formData);
+
+            // Show success message
+            showStep(3);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBookingModal();
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

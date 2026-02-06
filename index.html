@@ -19,10 +19,33 @@
             --ivory: #FFFEF9;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-primary);
+            border-radius: 5px;
+            border: 2px solid var(--cream);
+        }
+
+        ::selection {
+            background: var(--gold-primary);
+            color: var(--ivory);
         }
 
         body {
@@ -31,6 +54,20 @@
             background: var(--cream);
             overflow-x: hidden;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
         .serif {
@@ -48,10 +85,12 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(250, 247, 240, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--gold-primary);
+            background: rgba(250, 247, 240, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             animation: navSlideDown 0.8s ease-out;
+            transition: all 0.3s ease;
         }
 
         @keyframes navSlideDown {
@@ -149,11 +188,29 @@
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5), 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         /* Hero Section */
@@ -169,19 +226,34 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 0%, var(--gold-light) 100%);
-            opacity: 0.3;
+            top: -20%;
+            right: -10%;
+            width: 80%;
+            height: 120%;
+            background: radial-gradient(circle at center, var(--gold-light) 0%, transparent 60%);
+            opacity: 0.4;
             z-index: 0;
-            animation: gradientShift 8s ease-in-out infinite;
+            filter: blur(80px);
+            animation: breathe 10s ease-in-out infinite alternate;
         }
 
-        @keyframes gradientShift {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.05); }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+            opacity: 0.4;
+            z-index: 0;
+            filter: blur(90px);
+            animation: breathe 15s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+            100% { transform: scale(1.1) translate(-20px, 20px); opacity: 0.5; }
         }
 
         .hero .container {
@@ -519,17 +591,20 @@
         }
 
         .problem-card {
-            background: rgba(250, 247, 240, 0.05);
+            background: rgba(250, 247, 240, 0.03);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             padding: 2.5rem;
             border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .problem-card:hover {
             background: rgba(250, 247, 240, 0.08);
             border-color: var(--gold-primary);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .problem-icon {
@@ -1140,6 +1215,7 @@
     </style>
 </head>
 <body>
+    <div class="noise-overlay"></div>
     <nav>
         <div class="container">
             <a href="#" class="logo serif">
@@ -1160,10 +1236,10 @@
             <div class="hero-content">
                 <div class="hero-badge">Coming Soon to Nigeria</div>
                 <h1 class="serif">
-                    Turn Your Gold Into<br>
-                    <span class="gold-text">Growth Capital</span>
+                    Turn Your Gold<br>
+                    Into <span class="gold-text">Growth Capital</span>
                 </h1>
-                <p>The Gold Vault transforms your physical gold jewelry and bullion into instant digital liquidity. Access low-risk credit or sell on a trusted marketplace — all without losing ownership of your precious assets.</p>
+                <p>The Gold Vault transforms your physical gold into instant digital liquidity. Access low-risk credit or sell on a trusted marketplace — all without losing ownership of your precious assets.</p>
                 
                 <div class="hero-buttons">
                     <button class="primary-button" onclick="openBookingModal()">
